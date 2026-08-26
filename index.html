@@ -534,7 +534,7 @@
         <h3>🎉 পরীক্ষার চূড়ান্ত ফলাফল</h3>
         <div class="result-grid">
           <div class="result-item">
-            ⏱️ মোট সময়: <span id="res-time"></span> সে.
+            ⏱️ মোট সময়: <span id="res-time" style="font-weight: bold; color: #27ae60"></span>
           </div>
           <div class="result-item" style="border-left-color: #2980b9">
             🚀 স্পিড:
@@ -544,19 +544,19 @@
           <div class="result-item" style="border-left-color: #27ae60">
             🎯 নির্ভুলতা:
             <span id="res-acc" style="font-weight: bold; color: #27ae60"></span
-            >%
+            > %
           </div>
           <div class="result-item" style="border-left-color: #2ecc71">
-            ✅ সঠিক অক্ষর: <span id="res-right"></span>টি
+            ✅ সঠিক অক্ষর: <span id="res-right"></span> টি
           </div>
           <div class="result-item" style="border-left-color: #e74c3c">
-            ❌ ভুল অক্ষর: <span id="res-wrong-chars"></span>টি
+            ❌ ভুল অক্ষর: <span id="res-wrong-chars"></span> টি
           </div>
           <div class="result-item" style="border-left-color: #9b59b6">
-            ⌨️ মোট অক্ষর টাইপ: <span id="res-total-chars"></span>টি
+            ⌨️ মোট অক্ষর টাইপ: <span id="res-total-chars"></span> টি
           </div>
           <div class="result-item" style="border-left-color: #f1c40f">
-            📝 ভুল শব্দের সংখ্যা: <span id="res-wrong-words"></span>টি
+            📝 ভুল শব্দের সংখ্যা: <span id="res-wrong-words"></span> টি
           </div>
         </div>
         <div
@@ -922,7 +922,21 @@
           }
         }
 
-        document.getElementById("res-time").innerText = totalDuration;
+        // my written code
+
+        // সেকেন্ডকে মিনিটে রূপান্তর
+        const totalDurationCount =
+          totalDuration >= 60 ? totalDuration / 60 : totalDuration;
+
+        const totalDurationTimeHeading =
+          totalDuration >= 60 ? " মিনিট" : " সেকেন্ড";
+
+        document.getElementById("res-time").innerText =
+          totalDurationCount + totalDurationTimeHeading;
+        // my written code ends
+
+
+      //  document.getElementById("res-time").innerText = totalDuration;
         document.getElementById("res-wpm").innerText = wpmDisplay.innerText;
         document.getElementById("res-acc").innerText =
           accuracyDisplay.innerText;
