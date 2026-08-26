@@ -1043,7 +1043,7 @@
                 : item.totalDuration;
 
             const totalDurationTimeHeading =
-              item.totalDuration >= 60 ? "মিনিট" : "সেকেন্ড";
+              item.totalDuration >= 60 ? " মিনিট" : " সেকেন্ড";
             // my written code ends
 
             div.innerHTML = `
@@ -1054,7 +1054,7 @@
                 <div class="h-stats-row">
                     <span><span class="h-title">🚀 স্পিড:</span> <span class="h-val-wpm">${item.wpm} WPM</span></span>
                     <span>|</span>
-                    <span><span class="h-title">🎯 নির্ভুলতা:</span> <span class="h-val-acc">${item.acc}%</span></span>
+                    <span><span class="h-title">🎯 নির্ভুলতা:</span> <span class="h-val-acc">${item.acc} %</span></span>
                     <span>|</span>
                     <span><span class="h-title">⏱️ সময়:</span> <span class="h-val-totalDuration">${totalDurationCount + totalDurationTimeHeading} </span></span>
                 </div>
